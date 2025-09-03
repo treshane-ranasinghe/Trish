@@ -1040,6 +1040,409 @@
           padding: 30px 20px;
         }
       }
+
+            .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        
+      }
+
+      /* AI Demo Section */
+      .ai-demo {
+        padding: 150px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ai-demo::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at 30% 70%,
+          rgba(110, 68, 255, 0.15),
+          transparent 50%
+        );
+        z-index: -1;
+      }
+
+      .section-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 3.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        margin-bottom: 80px;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+
+      .demo-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 1000px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+      }
+
+      .demo-header {
+        padding: 25px 30px;
+        background: var(--dark-lighter);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .demo-title {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .demo-title i {
+        font-size: 1.8rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .demo-title h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .demo-indicators {
+        display: flex;
+        gap: 10px;
+      }
+
+      .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .indicator.red {
+        background-color: var(--secondary);
+      }
+
+      .indicator.yellow {
+        background-color: var(--accent);
+      }
+
+      .indicator.green {
+        background-color: #00ff88;
+      }
+
+      .chat-container {
+        height: 500px;
+        overflow-y: auto;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        background: rgba(10, 10, 10, 0.7);
+      }
+
+      .message {
+        max-width: 80%;
+        padding: 18px 24px;
+        border-radius: 20px;
+        position: relative;
+        animation: fadeIn 0.3s ease-out;
+        line-height: 1.6;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .bot-message {
+        align-self: flex-start;
+        background: rgba(110, 68, 255, 0.15);
+        border: 1px solid rgba(110, 68, 255, 0.2);
+        border-bottom-left-radius: 5px;
+      }
+
+      .user-message {
+        align-self: flex-end;
+        background: rgba(0, 217, 192, 0.15);
+        border: 1px solid rgba(0, 217, 192, 0.2);
+        border-bottom-right-radius: 5px;
+      }
+
+      .message-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .message-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+      }
+
+      .bot-icon {
+        background: var(--primary);
+        color: white;
+      }
+
+      .user-icon {
+        background: var(--accent);
+        color: var(--dark);
+      }
+
+      .message-sender {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .bot-sender {
+        color: var(--primary-light);
+      }
+
+      .user-sender {
+        color: var(--accent);
+      }
+
+      .message-content {
+        font-size: 1rem;
+      }
+
+      .typing-indicator {
+        align-self: flex-start;
+        background: rgba(110, 68, 255, 0.15);
+        border: 1px solid rgba(110, 68, 255, 0.2);
+        border-radius: 20px;
+        padding: 18px 24px;
+        display: none;
+      }
+
+      .typing-indicator span {
+        height: 8px;
+        width: 8px;
+        background: var(--primary-light);
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 5px;
+        animation: typing 1.3s infinite;
+      }
+
+      .typing-indicator span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .typing-indicator span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes typing {
+        0%, 100% {
+          transform: translateY(0);
+          opacity: 0.4;
+        }
+        50% {
+          transform: translateY(-5px);
+          opacity: 1;
+        }
+      }
+
+      .input-container {
+        padding: 25px 30px;
+        background: var(--dark-lighter);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        gap: 15px;
+      }
+
+      .message-input {
+        flex: 1;
+        padding: 16px 24px;
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s;
+      }
+
+      .message-input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px rgba(110, 68, 255, 0.2);
+      }
+
+      .send-button {
+        padding: 16px 24px;
+        border-radius: 50px;
+        background: var(--gradient);
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .send-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(110, 68, 255, 0.4);
+      }
+
+      .demo-footer {
+        padding: 20px 30px;
+        background: var(--dark-lighter);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .demo-footer a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .demo-footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Capabilities Section */
+      .capabilities {
+        padding: 80px 0;
+        background: var(--dark-lighter);
+      }
+
+      .capabilities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .capability-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .capability-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        border-color: var(--primary);
+      }
+
+      .capability-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .capability-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--text);
+      }
+
+      .capability-card p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2.5rem;
+        }
+
+        .chat-container {
+          height: 400px;
+          padding: 20px;
+        }
+
+        .message {
+          max-width: 90%;
+        }
+
+        .demo-header {
+          padding: 20px;
+        }
+
+        .input-container {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .ai-demo {
+          padding: 100px 0;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .section-subtitle {
+          font-size: 1rem;
+          margin-bottom: 50px;
+        }
+
+        .message {
+          padding: 15px;
+        }
+
+        .capabilities-grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1114,14 +1517,260 @@
 
     <!-- Services Section -->
     <section id="services" class="services">
-      <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">
-          At <strong>TRISH</strong>, we combine innovation, technology, and
-          design to deliver websites, apps, and marketing strategies that make
-          an impact. Our focus is simple: create solutions that are fast,
-          user-friendly, and results-driven.
-        </p>
+      
+
+        <!-- AI Demo Section -->
+        <section id="ai-demo" class="ai-demo">
+          <div class="container">
+            <h2 class="section-title">AI & RAG Development</h2>
+            <p class="section-subtitle">
+              Experience the power of Agentic AI and Retrieval-Augmented
+              Generation technology.
+            </p>
+
+            <div class="demo-container">
+              <div class="demo-header">
+                <div class="demo-title">
+                  <i class="fas fa-robot"></i>
+                  <h3>TRISH AI Assistant</h3>
+                </div>
+                <div class="demo-indicators">
+                  <div class="indicator red"></div>
+                  <div class="indicator yellow"></div>
+                  <div class="indicator green"></div>
+                </div>
+              </div>
+
+              <div class="chat-container" id="chatContainer">
+                <div class="message bot-message">
+                  <div class="message-header">
+                    <div class="message-icon bot-icon">
+                      <i class="fas fa-robot"></i>
+                    </div>
+                    <span class="message-sender bot-sender"
+                      >TRISH Assistant</span
+                    >
+                  </div>
+                  <div class="message-content">
+                    Hello! I'm a demo of the AI systems that TRISH specializes
+                    in building. I can show you how Agentic AI and RAG
+                    technology work. Try asking me about AI capabilities, RAG
+                    implementation, or request to see a technical explanation!
+                  </div>
+                </div>
+
+                <div class="typing-indicator" id="typingIndicator">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+
+              <div class="input-container">
+                <input
+                  type="text"
+                  class="message-input"
+                  id="messageInput"
+                  placeholder="Ask about AI, RAG, or type 'help' for options..."
+                  autocomplete="off"
+                />
+                <button class="send-button" id="sendButton">
+                  <i class="fas fa-paper-plane"></i> Send
+                </button>
+              </div>
+
+              <div class="demo-footer">
+                This is a demonstration of AI capabilities.
+                <a href="#contact">Contact us</a> to discuss implementing
+                similar technology for your business.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Capabilities Section -->
+        <section class="capabilities">
+          <div class="container">
+            <h2 class="section-title">Our AI Specializations</h2>
+            <p class="section-subtitle">
+              We develop cutting-edge AI solutions tailored to your specific
+              business needs
+            </p>
+
+            <div class="capabilities-grid">
+              <div class="capability-card">
+                <div class="capability-icon">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <h3>Agentic AI Systems</h3>
+                <p>
+                  AI that can autonomously pursue complex goals, make decisions,
+                  and interact with other systems.
+                </p>
+              </div>
+
+              <div class="capability-card">
+                <div class="capability-icon">
+                  <i class="fas fa-book"></i>
+                </div>
+                <h3>RAG Implementation</h3>
+                <p>
+                  Retrieval-Augmented Generation that combines LLMs with your
+                  proprietary data for accurate, contextual responses.
+                </p>
+              </div>
+
+              <div class="capability-card">
+                <div class="capability-icon">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Custom AI Solutions</h3>
+                <p>
+                  Tailored AI systems designed to solve your specific business
+                  challenges and integrate with your existing workflow.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const chatContainer = document.getElementById("chatContainer");
+            const messageInput = document.getElementById("messageInput");
+            const sendButton = document.getElementById("sendButton");
+            const typingIndicator = document.getElementById("typingIndicator");
+
+            // Predefined responses for the demo
+            const responses = {
+              hello:
+                "Hello! I'm a demo AI assistant showcasing TRISH's expertise in Agentic AI and RAG development. How can I help you understand these technologies better?",
+              hi: "Hi there! I'm excited to demonstrate the AI capabilities that TRISH can build for your business.",
+              "what is rag":
+                "RAG stands for Retrieval-Augmented Generation. It's a technique that enhances large language models by allowing them to retrieve information from knowledge sources before generating a response. This results in more accurate, up-to-date, and contextually relevant answers compared to standard LLMs.",
+              "what is agentic ai":
+                "Agentic AI refers to artificial intelligence systems that can autonomously pursue complex goals, make decisions, take actions, and learn from the outcomes. Unlike simple chatbots, Agentic AI can break down complex tasks into subtasks, use tools, and operate with a degree of autonomy while staying aligned with human intentions.",
+              "how does rag work":
+                "RAG works in two main phases: 1) Retrieval: The system searches a knowledge base (like your documents or database) for relevant information based on the query. 2) Generation: The retrieved information is provided to the LLM as context to generate a informed, accurate response. This combines the power of LLMs with the specificity of your data.",
+              "what can you do":
+                "I can demonstrate concepts related to Agentic AI and RAG technology. Try asking me about: RAG implementation, Agentic AI capabilities, custom AI solutions, or request a technical explanation of how these systems work.",
+              help: "I can explain and demonstrate: • What RAG is and how it works • Agentic AI capabilities • Implementation examples • Benefits of AI for businesses • Technical architecture • Try asking specific questions about AI technology!",
+              default:
+                'I specialize in explaining Agentic AI and RAG technology. Could you ask something more specific about these topics? For example, you could ask "What is RAG?" or "How does Agentic AI work?"',
+            };
+
+            // Keywords to trigger specific responses
+            const responseTriggers = {
+              rag: "what is rag",
+              retrieval: "what is rag",
+              agent: "what is agentic ai",
+              agentic: "what is agentic ai",
+              "how rag": "how does rag work",
+              "how does rag": "how does rag work",
+              "how agent": "what is agentic ai",
+              capability: "what can you do",
+              "what can": "what can you do",
+              help: "help",
+            };
+
+            // Add user message to chat
+            function addUserMessage(message) {
+              const messageElement = document.createElement("div");
+              messageElement.className = "message user-message";
+              messageElement.innerHTML = `
+            <div class="message-header">
+              <div class="message-icon user-icon">
+                <i class="fas fa-user"></i>
+              </div>
+              <span class="message-sender user-sender">You</span>
+            </div>
+            <div class="message-content">${message}</div>
+          `;
+              chatContainer.appendChild(messageElement);
+              chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+
+            // Add bot message to chat
+            function addBotMessage(message) {
+              const messageElement = document.createElement("div");
+              messageElement.className = "message bot-message";
+              messageElement.innerHTML = `
+            <div class="message-header">
+              <div class="message-icon bot-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <span class="message-sender bot-sender">TRISH Assistant</span>
+            </div>
+            <div class="message-content">${message}</div>
+          `;
+              chatContainer.appendChild(messageElement);
+              chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+
+            // Show typing indicator
+            function showTypingIndicator() {
+              typingIndicator.style.display = "block";
+              chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+
+            // Hide typing indicator
+            function hideTypingIndicator() {
+              typingIndicator.style.display = "none";
+            }
+
+            // Process user message and generate response
+            function processMessage(message) {
+              const lowerMessage = message.toLowerCase();
+              let responseKey = "default";
+
+              // Check for exact matches
+              if (responses[lowerMessage]) {
+                responseKey = lowerMessage;
+              } else {
+                // Check for keyword triggers
+                for (const [keyword, trigger] of Object.entries(
+                  responseTriggers
+                )) {
+                  if (lowerMessage.includes(keyword)) {
+                    responseKey = trigger;
+                    break;
+                  }
+                }
+              }
+
+              // Show typing indicator with random delay to simulate thinking
+              showTypingIndicator();
+              const delay = 1000 + Math.random() * 1000;
+
+              setTimeout(() => {
+                hideTypingIndicator();
+                addBotMessage(responses[responseKey]);
+              }, delay);
+            }
+
+            // Handle send button click
+            sendButton.addEventListener("click", function () {
+              const message = messageInput.value.trim();
+              if (message) {
+                addUserMessage(message);
+                messageInput.value = "";
+                processMessage(message);
+              }
+            });
+
+            // Handle enter key in input field
+            messageInput.addEventListener("keypress", function (e) {
+              if (e.key === "Enter") {
+                sendButton.click();
+              }
+            });
+
+            // Focus input field on load
+            messageInput.focus();
+          });
+
+          
+        </script>
 
         <div class="services-grid">
           <div class="service-card">
