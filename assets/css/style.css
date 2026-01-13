@@ -50,6 +50,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), 0 2px 15px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    
 }
 
 /* Scrolled state - enhanced glass effect */
@@ -291,7 +292,7 @@ html {
     transform: translateY(-100%);
   }
   to {
-    opacity: 1;
+    opacity: 1; 
     transform: translateY(0);
   }
 }
@@ -1198,4 +1199,199 @@ footer {
   .portfolio-item {
     padding: 30px 20px;
   }
+}
+
+
+/* Pricing Section */
+.pricing {
+  padding: 150px 0;
+  background: var(--dark-lighter);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 217, 192, 0.08),
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-top: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.pricing-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 50px 40px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(110, 68, 255, 0.35);
+}
+
+.pricing-card.featured {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.pricing-card.featured::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  
+  border-radius: 26px;
+  z-index: -1;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient);
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.pricing-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pricing-desc {
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+}
+
+.pricing-price {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-price .currency {
+  font-size: 1.2rem;
+  vertical-align: super;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px;
+  text-align: left;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: var(--text-secondary);
+}
+
+.pricing-features i {
+  color: var(--accent);
+}
+
+.pricing-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+
+
+/* Pricing Section */
+.pricing {
+  padding: 150px 0;
+  background-color: var(--dark);
+  margin-top: -150px;
+}
+
+.pricing-group-title {
+  margin: 80px 0 40px;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.pricing-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 45px 35px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.4s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(110, 68, 255, 0.35);
+}
+
+.pricing-card h4 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.pricing-card .price {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pricing-card ul li {
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+}
+
+.pricing-card.highlighted {
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 40px rgba(0, 217, 192, 0.25);
+}
+
+.pricing-note {
+  text-align: center;
+  margin-top: 60px;
+  color: var(--text-secondary);
+  font-size: 1rem;
 }
