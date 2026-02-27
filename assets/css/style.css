@@ -113,6 +113,12 @@ body {
   filter: drop-shadow(0 5px 15px rgba(110, 68, 255, 0.3));
 }
 
+@media (max-width: 768px) {
+  .logo img {
+    height: 35px;
+  }
+}
+
 /* Navigation Menu */
 .nav-menu {
   display: flex;
